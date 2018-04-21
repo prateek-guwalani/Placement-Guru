@@ -1,0 +1,543 @@
+<html lang="en"><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Bdtask - Bootstrap Admin Template Dashboard</title>
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/dist/img/ico/favicon.png" type="image/x-icon">
+        <link rel="apple-touch-icon" type="image/x-icon" href="assets/dist/img/ico/apple-touch-icon-57-precomposed.png">
+        <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="assets/dist/img/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="assets/dist/img/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="assets/dist/img/ico/apple-touch-icon-144-precomposed.png">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        <!-- Start Global Mandatory Style
+        =====================================================================-->
+        <!-- jquery-ui css -->
+        <link href="assets/plugins/jquery-ui-1.12.1/jquery-ui.min.css" rel="stylesheet" type="text/css">
+        <!-- Bootstrap -->
+        <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <!-- Bootstrap rtl -->
+        <!--<link href="assets/bootstrap-rtl/bootstrap-rtl.min.css" rel="stylesheet" type="text/css"/>-->
+        <!-- Lobipanel css -->
+        <link href="assets/plugins/lobipanel/lobipanel.min.css" rel="stylesheet" type="text/css">
+        <!-- Pace css -->
+        <link href="assets/plugins/pace/flash.css" rel="stylesheet" type="text/css">
+        <!-- Font Awesome -->
+        <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <!-- Pe-icon -->
+        <link href="assets/pe-icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet" type="text/css">
+        <!-- Themify icons -->
+        <link href="assets/themify-icons/themify-icons.css" rel="stylesheet" type="text/css">
+        <!-- End Global Mandatory Style
+        =====================================================================-->
+        
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<!-- Start page Label Plugins
+        =====================================================================-->
+        <!-- bootstrap markdown css -->
+        <link href="assets/plugins/markdown/bootstrap-markdown.min.css" rel="stylesheet" type="text/css">
+        <!-- End page Label Plugins
+        =====================================================================-->
+        <!-- Start Theme Layout Style
+        =====================================================================-->
+        <!-- Theme style -->
+        <link href="assets/dist/css/styleBD.css" rel="stylesheet" type="text/css">
+        <!-- Theme style rtl -->
+        <!--<link href="assets/dist/css/styleBD-rtl.css" rel="stylesheet" type="text/css"/>-->
+        <!-- End Theme Layout Style
+        =====================================================================-->
+		
+		
+		
+		
+	<!-- 	<script>
+		 $(document).ready(function() {
+              var i=0;
+			  
+    
+	
+	 $('#r').html('<table>');
+     for( i=0; i < data.length; i++){
+  
+    $('#r'+i).html('<td> '+ data[i].q_id +'</td>');
+    $('#r'+i).html('<td> ' + data[i].topic+'</td>');
+	
+	
+		
+				 }
+                  
+	  $('#r').html('</table>');			  
+                  
+                   
+               
+            
+          });
+		  </script>-->
+		
+		<script>
+			
+		</script>
+		
+		
+		
+		
+		
+		<script>
+
+		function CallRun()
+		{
+		var code=document.getElementById("cd1").value;
+
+		var input=document.getElementById("in1").value;
+		var lang=document.getElementById("exampleSelect1").value;
+		var check;
+		if(document.getElementById("chec").checked===true)
+		check=0;
+		else
+		check=1;
+
+		xmlhttp = new XMLHttpRequest();
+   xmlhttp.open("POST","http://localhost:8081/test_compiler?code="+encodeURIComponent(code)+"&input="+encodeURIComponent(input)+"&lang="+lang+"&check="+check+"&f="+check, true);
+ //document.getElementById("output").innerHTML=code;
+ xmlhttp.send();
+  xmlhttp.onreadystatechange=function(){
+        // if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		 {
+           string=xmlhttp.responseText;
+		   document.getElementById("output").value=string;
+         }
+   }
+
+   }
+		</script>
+    <script>
+
+		function change()
+        {
+          var a=document.getElementById("exampleSelect1").value;
+          if(a=="Java")
+          {
+            java();
+          }
+          else if(a=="C")
+          {
+            c();
+          }
+          else if(a=="Pyth")
+          {
+            pyth();
+          }
+		  else if(a=="CPP")
+		  {
+             cpp();
+           }}
+        function cpp()
+        {
+          document.getElementById("cd1").value="#include <iostream>\nusing namespace std;\nint main()\n {//\n your code goes here return 0;\n\t}";
+        }
+        function java()
+        {
+          document.getElementById("cd1").value="import java.util.*;\nimport java.lang.*;\nimport java.io.*;\n/* Name of the class has to be Main only if the class is public.\n */class Main\n{\npublic static void main (String[] args) throws java.lang.Exception\n{\n// your code goes here\n}\n}\n";
+        }
+        function pyth()
+        {
+          document.getElementById("cd1").value="# This is sample program to prints Hello, world!\nprint('Hello, world!')";
+        }
+		function c()
+		{
+		     document.getElementById("cd1").value="#include <stdio.h>\nint main()\n {//\n printf();\nreturn 0;\n\t}";
+
+         }
+        </script>
+
+    </head>
+    <body class="sidebar-mini                    pace-done" style=""><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+        <!-- Site wrapper -->
+        <div class="wrapper">
+            <header class="main-header">
+                <a href="index.html" class="logo"> <!-- Logo -->
+                    <span class="logo-mini">
+                        <!--<b>A</b>BD-->
+                        <img src="" alt="">
+                    </span>
+                    <span class="logo-lg">
+                        <!--<b>Admin</b>BD-->
+                        
+                    </span>
+                </a>
+                <!-- Header Navbar -->
+                <nav class="navbar navbar-static-top">
+                    <a href="forms_editor_markdown.html#" class="sidebar-toggle" data-toggle="offcanvas" role="button"> <!-- Sidebar toggle button-->
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="pe-7s-keypad"></span>
+                    </a>
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- Messages -->
+                            <li class="dropdown messages-menu">
+
+                                <ul class="dropdown-menu">
+                                    <li class="header">You have 4 messages</li>
+                                    <li>
+                                        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;"><ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">
+                                            <li><!-- start message -->
+                                                <a href="forms_editor_markdown.html#">
+                                                    <div class="pull-left"><img src="assets/dist/img/avatar.png" class="img-circle" alt="User Image"></div>
+                                                    <h4>Support Team<small><i class="fa fa-clock-o"></i> 5 mins</small></h4>
+                                                    <p>Why not buy a new awesome theme?</p>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="forms_editor_markdown.html#">
+                                                    <div class="pull-left"><img src="assets/dist/img/avatar2.png" class="img-circle" alt="User Image"></div>
+                                                    <h4>AdminLTE Design Team<small><i class="fa fa-clock-o"></i> 2 hours</small></h4>
+                                                    <p>Why not buy a new awesome theme?</p>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="forms_editor_markdown.html#">
+                                                    <div class="pull-left"><img src="assets/dist/img/avatar3.png" class="img-circle" alt="User Image"></div>
+                                                    <h4>Developers<small><i class="fa fa-clock-o"></i> Today</small></h4>
+                                                    <p>Why not buy a new awesome theme?</p>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="forms_editor_markdown.html#">
+                                                    <div class="pull-left"><img src="assets/dist/img/avatar4.png" class="img-circle" alt="User Image"></div>
+                                                    <h4>Sales Department<small><i class="fa fa-clock-o"></i> Yesterday</small></h4>
+                                                    <p>Why not buy a new awesome theme?</p>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="forms_editor_markdown.html#">
+                                                    <div class="pull-left"><img src="assets/dist/img/avatar5.png" class="img-circle" alt="User Image"></div>
+                                                    <h4>Reviewers<small><i class="fa fa-clock-o"></i> 2 days</small></h4>
+                                                    <p>Why not buy a new awesome theme?</p>
+                                                </a>
+                                            </li>
+                                        </ul><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div><div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+                                    </li>
+                                    <li class="footer"><a href="forms_editor_markdown.html#">See All Messages</a></li>
+                                </ul>
+                            </li>
+                            <!-- Notifications -->
+                            <li class="dropdown notifications-menu">
+
+                                <ul class="dropdown-menu">
+                                    <li class="header">You have 10 notifications</li>
+                                    <li>
+                                        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;"><ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">
+                                            <li><a href="forms_editor_markdown.html#"><i class="ti-user color-gray"></i> 5 new members joined today </a></li>
+                                            <li><a href="forms_editor_markdown.html#"><i class="ti-announcement color-green"></i> Very long description here that may not fit into the page and may cause design problems</a></li>
+                                            <li><a href="forms_editor_markdown.html#"><i class="fa fa-users"></i> 5 new members joined</a></li>
+                                            <li><a href="forms_editor_markdown.html#"><i class="ti-shopping-cart color-violet"></i> 25 sales made</a></li>
+                                            <li><a href="forms_editor_markdown.html#"><i class="ti-twitter color-info"></i>  3 New Followers</a></li>
+                                        </ul><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div><div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+                                    </li>
+                                    <li class="footer"><a href="forms_editor_markdown.html#">View all</a></li>
+                                </ul>
+                            </li>
+                            <!-- Tasks -->
+                            <li class="dropdown tasks-menu">
+
+                                <ul class="dropdown-menu">
+                                    <li class="header">You have 9 tasks</li>
+                                    <li>
+                                        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;"><ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">
+                                            <li> <!-- Task item -->
+                                                <a href="forms_editor_markdown.html#">
+                                                    <h3>
+                                                        Design some buttons
+                                                        <small class="pull-right">20%</small>
+                                                    </h3>
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-primary progress-bar-striped active" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                                                            <span class="sr-only">30% Complete (primary)</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li> <!-- end task item -->
+                                            <li> <!-- Task item -->
+                                                <a href="forms_editor_markdown.html#">
+                                                    <h3>
+                                                        Create a nice theme
+                                                        <small class="pull-right">40%</small>
+                                                    </h3>
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                                            <span class="sr-only">40% Complete (primary)</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li> <!-- end task item -->
+                                            <li> <!-- Task item -->
+                                                <a href="forms_editor_markdown.html#">
+                                                    <h3>
+                                                        Some task I need to do
+                                                        <small class="pull-right">60%</small>
+                                                    </h3>
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                                            <span class="sr-only">60% Complete (info)</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li> <!-- end task item -->
+                                            <li> <!-- Task item -->
+                                                <a href="forms_editor_markdown.html#">
+                                                    <h3>
+                                                        Make beautiful transitions
+                                                        <small class="pull-right">80%</small>
+                                                    </h3>
+                                                    <div class="progress">
+                                                        <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                                            <span class="sr-only">80% Complete (warning)</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <!-- end task item -->
+                                        </ul><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div><div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+                                    </li>
+                                    <li class="footer">
+                                        <a href="forms_editor_markdown.html#">View all tasks</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- settings -->
+                            <li class="dropdown dropdown-user">
+                                <a href="forms_editor_markdown.html#" class="dropdown-toggle" data-toggle="dropdown"> <i class="pe-7s-settings"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="profile.html"><i class="pe-7s-users"></i> User Profile</a></li>
+                                    <li><a href="forms_editor_markdown.html#"><i class="pe-7s-settings"></i> Settings</a></li>
+                                    <li><a href="login.html"><i class="pe-7s-key"></i> Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- =============================================== -->
+            <!-- Left side column. contains the sidebar -->
+            <aside class="main-sidebar">
+                <!-- sidebar -->
+                <div class="sidebar" style="height: auto;">
+                    <!-- Sidebar user panel -->
+                    <div class="user-panel text-center">
+                        <div class="image">
+                            <img src="assets/dist/img/user2-160x160.png" class="img-circle" alt="User Image">
+                        </div>
+                        <div class="info">
+                            <p>Naeem Khan</p>
+
+                        </div>
+                    </div>
+
+                    <!-- sidebar menu -->
+                    <ul class="sidebar-menu">
+                        <li class="header">MAIN NAVIGATION</li>
+
+                            <li class="treeview">
+                            <a href="/admin">
+                                 <span>Take Test</span>
+                                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="forms_editor_markdown.html#">Aptitude</a></li>
+                                <li>
+                                    <a href="forms_editor_markdown.html#">Level One
+                                        <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li><a href="forms_editor_markdown.html#">Technical </a></li>
+                                        <li>
+                                            <a href="forms_editor_markdown.html#">Level Two
+                                                <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                                            </a>
+                                            <ul class="treeview-menu">
+                                                <li><a href="forms_editor_markdown.html#">English</a></li>
+                                                <li><a href="forms_editor_markdown.html#">Level Three</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="forms_editor_markdown.html#">Level One</a></li>
+                            </ul>
+                        </li>
+						<li class="treeview">
+                            <a href="/previous">
+                                 <span>Previous Score</span>
+                                <span class="pull-right-container"></span>
+                            </a>
+
+                        </li>
+                         <li class="treeview">
+                            <a href="/compiler">
+                                 <span>Compiler</span>
+                                <span class="pull-right-container"></span>
+                            </a>
+
+                        </li>
+
+                        <li><a href="/logout" target="_blank"><i class="ti-bookmark"></i><span>Log Out</span></a></li>
+
+                    </ul>
+                </div> <!-- /.sidebar -->
+            </aside>
+            <!-- =============================================== -->
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper" style="min-height: 1456px;">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <div class="header-icon">
+                        <i class="pe-7s-note2"></i>
+                    </div>
+                    <div class="header-title">
+                        <h1>COMPILER</h1>
+                        <small>Compile &amp; Run your code here</small>
+
+                    </div>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-sm-12 lobipanel-parent-sortable ui-sortable" data-lobipanel-child-inner-id="waOdgR7o8w">
+                            <div class="panel panel-bd lobidrag lobipanel lobipanel-sortable" data-inner-id="waOdgR7o8w" data-index="0">
+							<div class="col-sm-12 lobipanel-parent-sortable ui-sortable" data-lobipanel-child-inner-id="qv4YPLCUsz"> 
+                            <div class="panel panel-bd lobidrag lobipanel lobipanel-sortable" data-inner-id="qv4YPLCUsz" data-index="0">
+                                <div class="panel-heading ui-sortable-handle">
+                                    <div class="panel-title" style="max-width: calc(100% - 180px);">
+                                        <h4>DataTables with HTML5 export buttons </h4>
+										
+                                    </div>
+                                <div class="dropdown"><ul class="dropdown-menu dropdown-menu-right"><li><a data-func="editTitle" data-tooltip="Edit title" data-toggle="tooltip" data-title="Edit title" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-pencil"></i><span class="control-title">Edit title</span></a></li><li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li><li><a data-func="reload" data-tooltip="Reload" data-toggle="tooltip" data-title="Reload" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-reload"></i><span class="control-title">Reload</span></a></li><li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li><li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li><li><a data-func="close" data-tooltip="Close" data-toggle="tooltip" data-title="Close" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-close"></i><span class="control-title">Close</span></a></li></ul><div class="dropdown-toggle" data-toggle="dropdown"><span class="panel-control-icon glyphicon glyphicon-cog"></span></div></div></div>
+ <div class="row">
+                        <div class="col-sm-12">
+                            <div class="panel panel-bd">
+                                <div class="panel-body">
+	<div  class="demo">
+	
+	
+	<form id="r" action="start_prog" method="POST">
+	
+</form>
+
+		
+
+                                 </div>
+                                    
+                                    <!-- <div class="table-responsive"> -->
+                                        <div id="dataTableExample2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-4"><div class="dataTables_length" id="dataTableExample2_length"></div></div><div class="col-sm-4"><div id="dataTableExample2_filter" class="dataTables_filter"></div></div></div></div>
+
+							    
+                            </div>
+                        </div>
+                    </div>
+                                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                            </div>
+                        </div>
+                    </section></div>
+                 <!-- /.content -->
+            </div> <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div class="pull-right hidden-xs"> <b>Version</b> 1.0</div>
+                <strong>Copyright © 2016-2017 <a href="forms_editor_markdown.html#">bdtask</a>.</strong> All rights reserved. <i class="fa fa-heart color-green"></i>
+            </footer>
+        
+        <!-- ./wrapper -->
+        <!-- Start Core Plugins
+        =====================================================================-->
+		    <!-- jQuery -->
+        <script src="assets/plugins/jQuery/jquery-1.12.4.min.js" type="text/javascript"></script>
+        <!-- jquery-ui -->
+        <script src="assets/plugins/jquery-ui-1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+        <!-- Bootstrap -->
+        <script src="assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <!-- lobipanel -->
+        <script src="assets/plugins/lobipanel/lobipanel.min.js" type="text/javascript"></script>
+        <!-- Pace js -->
+        <script src="assets/plugins/pace/pace.min.js" type="text/javascript"></script>
+        <!-- SlimScroll -->
+        <script src="assets/plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <!-- FastClick -->
+        <script src="assets/plugins/fastclick/fastclick.min.js" type="text/javascript"></script>
+        <!-- AdminBD frame -->
+        <script src="assets/dist/js/frame.js" type="text/javascript"></script>
+        <!-- End Core Plugins
+        =====================================================================-->
+        <!-- Start Page Lavel Plugins
+        =====================================================================-->
+        <!-- bootstrap markdown js -->
+        <script src="assets/plugins/markdown/bootstrap-markdown.js" type="text/javascript"></script>
+        <!-- End Page Lavel Plugins
+        =====================================================================-->
+        <!-- Start Theme label Script
+        =====================================================================-->
+        <!-- Dashboard js -->
+        <script src="assets/dist/js/dashboard.js" type="text/javascript"></script>
+        <!-- End Theme label Script
+        =====================================================================-->
+
+<script>
+		function htmlParse(x)
+		{
+		var c=document.createElement("div");
+		c.innerHTML=x;
+		return c.innerText;
+		}
+		
+		var data=<%-dat%>
+		//alert(y);
+		//var y=htmlParse(d);
+	    alert(data[0].q_id);
+		//var data=JSON.parse(y);
+		
+		var i;
+		 
+  
+			var app='';
+			 for( i=0; i < data.length; i++){
+			app+='<input type="radio" name="'+'qid'+'"value="'+data[i].q_id+'"/> '+data[i].q_id+' '+data[i].topic+'<br>'; 
+		
+				 }
+				 app+='<input type="submit" value="Submit">'
+				 document.getElementById('r').innerHTML=app;
+		</script>
+
+<div id="toTop" class="btn back-top" style="display: block;"><span class="ti-arrow-up"></span></div>
+</body></html>
